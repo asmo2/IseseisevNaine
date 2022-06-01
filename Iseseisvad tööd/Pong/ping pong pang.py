@@ -29,7 +29,7 @@ palk_posX = 250
 palk_speedX = 5
 
 gameover = False
-while not gameover:    #kui mäng ei ole läbi
+while not gameover:  # kui mäng ei ole läbi
     clock.tick(60)
     events = pygame.event.get()
     for i in events:
@@ -37,7 +37,7 @@ while not gameover:    #kui mäng ei ole läbi
             quit()
 
     keys = pygame.key.get_pressed()
-    if keys[pygame.K_LEFT] and palk_posX > 0:  #kui vajutad nuppu palk liigub
+    if keys[pygame.K_LEFT] and palk_posX > 0:  # kui vajutad nuppu palk liigub
         palk_posX -= palk_speedX
     if keys[pygame.K_RIGHT] and palk_posX < 520:
         palk_posX += palk_speedX
@@ -49,7 +49,7 @@ while not gameover:    #kui mäng ei ole läbi
     palk_1 = pygame.Rect(palk_posX, palk_posY, 120, 20)  # hit detection'i jaoks
     screen.blit(palk_image, palk_1)
 
-   # palk_posX += -palk_speedX  # palk liigub
+    # palk_posX += -palk_speedX  # palk liigub
 
     pall_posY += -pall_speedY  # pall liigub
     pall_posX += -pall_speedX  # pall liigub
@@ -59,8 +59,8 @@ while not gameover:    #kui mäng ei ole läbi
     if pall_posY < 0 or pall_posY > 460:
         pall_speedY = -pall_speedY
 
-    #if palk_posX < 0 or palk_posX > 520:  # ei lase palgil minna piiridest välja
-     #   palk_speedX = -palk_speedX
+    # if palk_posX < 0 or palk_posX > 520:  # ei lase palgil minna piiridest välja
+    #   palk_speedX = -palk_speedX
 
     if pall_1.colliderect(palk_1) and pall_speedY < 0:  # ei lase pallil minna palgi pealt läbi vaid põrkab minema
         pall_speedY = -pall_speedY
@@ -68,7 +68,8 @@ while not gameover:    #kui mäng ei ole läbi
 
     if pall_posY > 460:
         gameover = True
-    screen.blit(pygame.font.Font(None, 30).render(f"Skoor: {score}", True, [255, 255, 255]), [10, 10]) #mängu sisene skoor
+    screen.blit(pygame.font.Font(None, 30).render(f"Skoor: {score}", True, [255, 255, 255]),
+                [10, 10])  # mängu sisene skoor
     pygame.display.flip()
 
 while gameover:
@@ -77,10 +78,8 @@ while gameover:
     for i in events:
         if i.type == pygame.QUIT:
             quit()
-    screen.fill ((6, 6, 6)) #surnud ekraani värvus
+    screen.fill((6, 6, 6))  # surnud ekraani värvus
 
-    screen.blit(pygame.font.Font(None, 50).render(f"Skoor: {score}", True, [255, 255, 255]), [250, 400]) #lõpu tekst
+    screen.blit(pygame.font.Font(None, 50).render(f"Skoor: {score}", True, [255, 255, 255]), [250, 400])  # lõpu tekst
     screen.blit(pygame.font.Font(None, 50).render(f"sitt oled", True, [255, 255, 255]), [320, 225])
     pygame.display.flip()
-
-
