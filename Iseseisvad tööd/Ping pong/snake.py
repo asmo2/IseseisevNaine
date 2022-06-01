@@ -6,10 +6,8 @@ from itertools import cycle
 
 snake_speed = 15
 
-
 window_x = 720
 window_y = 480
-
 
 black = pygame.Color(0, 0, 0)
 white = pygame.Color(255, 255, 255)
@@ -24,7 +22,7 @@ pygame.init()
 pygame.display.set_caption('GeeksforGeeks Snakes')
 game_window = pygame.display.set_mode((window_x, window_y))
 
-berry = cycle(["Luigi.png","Mario.png"])
+berry = cycle(["Luigi.png", "Mario.png"])
 berryimg = next(berry)
 
 # fpsi kontroller
@@ -44,7 +42,6 @@ fruit_position = [random.randrange(1, (window_x // 10)) * 10,
                   random.randrange(1, (window_y // 10)) * 10]
 
 fruit_spawn = True
-
 
 direction = 'RIGHT'
 change_to = direction
@@ -73,10 +70,11 @@ def game_over():
     game_over_rect.midtop = (window_x / 2, window_y / 4)
     game_window.blit(game_over_surface, game_over_rect)
     pygame.display.flip()
-    time.sleep(2) #kui saad surma läheb 2sek prst kinni
+    time.sleep(2)  # kui saad surma läheb 2sek prst kinni
     pygame.quit()
 
     quit()
+
 
 while True:
 
@@ -126,7 +124,7 @@ while True:
         pygame.draw.rect(game_window, green,
                          pygame.Rect(pos[0], pos[1], 10, 10))
     berry_Rect = pygame.Rect(fruit_position[0], fruit_position[1], 10, 10)
-    game_window.blit(pygame.image.load(berryimg),berry_Rect)
+    game_window.blit(pygame.image.load(berryimg), berry_Rect)
 
     if snake_position[0] < 0 or snake_position[0] > window_x - 10:
         game_over()
