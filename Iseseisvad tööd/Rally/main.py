@@ -1,4 +1,4 @@
-''''
+
 import pygame
 import random
 
@@ -92,5 +92,4 @@ while gameover:
     screen.blit(pygame.font.Font(None, 50).render(f"Skoor: {Score}", True, [255, 255, 255]), [250, 400])
     screen.blit(pygame.font.Font(None, 50).render(f"sitt oled", True, [255, 255, 255]), [320, 225])
     pygame.display.flip()
-'''
 
