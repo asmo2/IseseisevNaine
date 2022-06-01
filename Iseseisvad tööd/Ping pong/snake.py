@@ -2,6 +2,7 @@
 import pygame
 import time
 import random
+from itertools import cycle
 
 snake_speed = 15
 
@@ -22,6 +23,9 @@ pygame.init()
 #
 pygame.display.set_caption('GeeksforGeeks Snakes')
 game_window = pygame.display.set_mode((window_x, window_y))
+
+berry = cycle(["Luigi.png","Mario.png"])
+berryimg = next(berry)
 
 # fpsi kontroller
 fps = pygame.time.Clock()
@@ -106,6 +110,7 @@ while True:
     snake_body.insert(0, list(snake_position))
     if snake_position[0] == fruit_position[0] and snake_position[1] == fruit_position[1]:
         score += 1
+        berryimg = next(berry)
         fruit_spawn = False
     else:
         snake_body.pop()
@@ -120,8 +125,9 @@ while True:
     for pos in snake_body:
         pygame.draw.rect(game_window, green,
                          pygame.Rect(pos[0], pos[1], 10, 10))
-    pygame.draw.rect(game_window, white, pygame.Rect(
-        fruit_position[0], fruit_position[1], 10, 10))
+    berry_Rect = pygame.Rect(fruit_position[0], fruit_position[1], 10, 10)
+    game_window.blit(pygame.image.load(berryimg),berry_Rect)
+
     if snake_position[0] < 0 or snake_position[0] > window_x - 10:
         game_over()
     if snake_position[1] < 0 or snake_position[1] > window_y - 10:
