@@ -1,5 +1,5 @@
 import pygame
-
+pygame.init()
 
 screenX = 640
 screenY = 480
@@ -37,4 +37,5 @@ while not gameover:
     palk_1 = pygame.Rect(palk_posX, palk_posY, 120, 20)
     screen.blit(palk_image, palk_1)
 
+    #screen.fill(blue)
     pygame.display.flip()
