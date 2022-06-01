@@ -53,8 +53,8 @@ while not gameover:
     bg_rally_posY += bg_rally_speed  # liidab positsioonile kiiruse
     bg_rally2_posY += bg_rally_speed  # liidab positsioonile kiiruse
 
-    screen.blit(bg_rally2, (0, bg_rally2_posY))
-    screen.blit(bg_rally, (0, bg_rally_posY))
+    screen.blit(bg_rally2, (0, bg_rally2_posY)) #uuendab ekraani
+    screen.blit(bg_rally, (0, bg_rally_posY)) #uuendab ekraani
 
     f1_blue = pygame.Rect(f1_blue_posX, f1_blue_posY, 45, 90)
     screen.blit(f1_blue_image, f1_blue)
