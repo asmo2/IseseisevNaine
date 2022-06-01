@@ -8,7 +8,7 @@ screenY = 480
 
 screen = pygame.display.set_mode((screenX, screenY))
 
-clock = pygame.time.Clock()
+clock = pygame.time.Clock() #fps
 
 Score = 0
 
