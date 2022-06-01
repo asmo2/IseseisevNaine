@@ -3,7 +3,7 @@ from random import randint
 
 BLACK = (0, 0, 0)
 DARKBLUE = (36, 90, 190)
-bally = pygame.image.load("ball.png")
+bally = pygame.image.load("daamn/ball.png")
 
 
 class Ball(pygame.sprite.Sprite):
