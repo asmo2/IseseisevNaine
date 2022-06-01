@@ -21,8 +21,8 @@ palk_image = pygame.transform.scale(palk_image, (120, 20))  # teeb palgi õigeks
 
 pall_posY = 100  # palli asukoht
 pall_posX = 200
-pall_speedX = 1
-pall_speedY = 1
+pall_speedX = 4
+pall_speedY = 4
 
 palk_posY = 400  # palgi asukoht
 palk_posX = 250

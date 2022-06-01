@@ -4,6 +4,9 @@ import time
 import random
 from itertools import cycle
 
+pygame.mixer.music.load('pingpong/amogus.mp3')
+pygame.mixer.music.play(0)
+
 snake_speed = 15
 
 window_x = 720
