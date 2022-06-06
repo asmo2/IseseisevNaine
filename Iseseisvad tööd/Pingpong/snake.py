@@ -3,31 +3,28 @@ import pygame
 import time
 import random
 from itertools import cycle
+psw = pygame.image.load("psw.jpg")
 
-pygame.init()
-pygame.mixer.music.load('pingpong/amogus.mp3')
+pygame.init() #et laul töötaks
+pygame.mixer.music.load('amogus.mp3')
 pygame.mixer.music.play(0)
 
 
-snake_speed = 15
+snake_speed = 15 #ussi kiirus
 
-window_x = 720
+window_x = 720 #akna suurus
 window_y = 480
 
-black = pygame.Color(0, 0, 0)
+black = pygame.Color(0, 0, 0) #värvid
 white = pygame.Color(255, 255, 255)
 red = pygame.Color(255, 0, 0)
 green = pygame.Color(0, 255, 0)
 blue = pygame.Color(0, 0, 255)
 
-#
-pygame.init()
-
-#
-pygame.display.set_caption('GeeksforGeeks Snakes')
+#tekitab ekraani
 game_window = pygame.display.set_mode((window_x, window_y))
 
-berry = cycle(["Luigi.png", "Mario.png"])
+berry = cycle(["Luigi.png", "Mario.png"]) #Mariod
 berryimg = next(berry)
 
 # fpsi kontroller
@@ -46,9 +43,9 @@ snake_body = [[100, 50],
 fruit_position = [random.randrange(1, (window_x // 10)) * 10,
                   random.randrange(1, (window_y // 10)) * 10]
 
-fruit_spawn = True
+fruit_spawn = True #tekib vili
 
-direction = 'RIGHT'
+direction = 'RIGHT' #pööramine
 change_to = direction
 
 # skoor
@@ -118,20 +115,23 @@ while True:
     else:
         snake_body.pop()
 
-    if not fruit_spawn:
+    if not fruit_spawn: #tekib vili random kohta
         fruit_position = [random.randrange(1, (window_x // 10)) * 10,
                           random.randrange(1, (window_y // 10)) * 10]
 
-    fruit_spawn = True
+    fruit_spawn = True #tekib vili
     game_window.fill(black)
+    game_window.blit(psw, (0, 0))
 
-    for pos in snake_body:
+
+
+    for pos in snake_body:#joonistab ussi
         pygame.draw.rect(game_window, green,
                          pygame.Rect(pos[0], pos[1], 10, 10))
     berry_Rect = pygame.Rect(fruit_position[0], fruit_position[1], 10, 10)
     game_window.blit(pygame.image.load(berryimg), berry_Rect)
 
-    if snake_position[0] < 0 or snake_position[0] > window_x - 10:
+    if snake_position[0] < 0 or snake_position[0] > window_x - 10: #uss puudutab seina saab surma
         game_over()
     if snake_position[1] < 0 or snake_position[1] > window_y - 10:
         game_over()
