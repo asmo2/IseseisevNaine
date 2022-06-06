@@ -124,7 +124,6 @@ while True:
     game_window.blit(psw, (0, 0))
 
 
-
     for pos in snake_body:#joonistab ussi
         pygame.draw.rect(game_window, green,
                          pygame.Rect(pos[0], pos[1], 10, 10))
