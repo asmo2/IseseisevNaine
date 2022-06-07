@@ -20,7 +20,7 @@ blue = pygame.Color(0, 0, 255)
 pygame.init()
 
 #
-pygame.display.set_caption('GeeksforGeeks Snakes')
+pygame.display.set_caption('mäng')
 game_window = pygame.display.set_mode((window_x, window_y))
 
 # fpsi kontroller

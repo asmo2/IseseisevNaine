@@ -2,7 +2,7 @@ import pygame
 
 pygame.init()
 
-pygame.mixer.music.load('amg/music.mp3')
+pygame.mixer.music.load('amg/music.mp3') #muusika
 pygame.mixer.music.play(0)
 
 screenX = 640  # ekraani suurus
