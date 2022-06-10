@@ -406,7 +406,7 @@ def startGame():
   monsta_list.add(Blinky)
   all_sprites_list.add(Blinky)
 
-  Pinky=Ghost( w, m_h, "images/Pinky.png" )
+  Pinky=Ghost(w, m_h, "images/Pinky1.png")
   monsta_list.add(Pinky)
   all_sprites_list.add(Pinky)
    
